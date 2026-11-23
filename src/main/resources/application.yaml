@@ -1,0 +1,24 @@
+spring:
+  application:
+    name: order-processing-service
+  datasource:
+    url: jdbc:h2:mem:ordersdb
+    username: sa
+    password:
+  jpa:
+    hibernate:
+      ddl-auto: update
+  h2:
+    console:
+      enabled: true
+  kafka:
+    bootstrap-servers: localhost:9092
+    producer:
+      key-serializer: org.apache.kafka.common.serialization.StringSerializer
+      value-serializer: org.apache.kafka.common.serialization.StringSerializer
+
+app:
+  kafka:
+    enabled: false
+    topic: order-events
+
